@@ -4,39 +4,67 @@ object Calculator {
     var ans:Double=0;
     var no:Double=0;
     var stop:Boolean=false;
+    var ch:Char='0';
 
     do{
       opt=scala.io.StdIn.readChar();
 
       opt match{
         case '+'=>
-          no=scala.io.StdIn.readInt();
-          ans=ans+no;
+          ch=scala.io.StdIn.readChar();
+          if(ch.isDigit){
+            no=(ch.asDigit)
+            ans=ans+no;
+            println("Answer : "+ans);
+          }else{
+            println("Invalid character entered");
+            stop=true;
+          }         
 
         case '-'=>
-          no=scala.io.StdIn.readInt();
-          ans=ans-no;
+          ch=scala.io.StdIn.readChar();
+            if(ch.isDigit){
+              no=(ch.asDigit)
+              ans=ans-no;
+              println("Answer : "+ans);
+          }else{
+              println("Invalid character entered");
+              stop=true;
+          }         
+          
 
         case '*'=>
-          no=scala.io.StdIn.readInt();
-          ans=ans*no;
+          ch=scala.io.StdIn.readChar();
+            if(ch.isDigit){
+              no=(ch.asDigit)
+              ans=ans*no;
+              println("Answer : "+ans);
+          }else{
+              println("Invalid character entered");
+              stop=true;
+          }      
+          
 
         case '/'=>
-          no=scala.io.StdIn.readInt();
-          ans=ans/no;
+          ch=scala.io.StdIn.readChar();
+            if(ch.isDigit){
+              no=(ch.asDigit)
+              ans=ans/no;
+              println("Answer : "+ans);
+          }else{
+              println("Invalid character entered");
+              stop=true;
+          }      
 
         case '='=>
-          println("Answer is : "+ans);
+          println("Answer is: "+ans);
           stop=true;
 
         case _ =>
           if(opt.isDigit){
             if(ans==0){
               ans=opt.asDigit;
-            }else{
-              no=opt.asDigit;
             }
-
           }else{
             println("Invalid character entered!");
             stop=true;
